@@ -108,10 +108,10 @@
 
         NUM {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp PERCENT      &kp PLUS         &kp SEMICOLON                                                     &kp LEFT_BRACKET   &kp N7        &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
-&kp SLASH                   &kp AT_SIGN      &kp KP_NUMBER_5  &kp RC(AMPS)     &kp ASTERISK   &kp LC(LA(KP_NUMBER_0))      &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL
-&mt LEFT_SHIFT KP_NUMBER_0  &kp UP_ARROW     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &kp AT_SIGN                  &kakko2               &kp NUMBER_0       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
-&kp LEFT_ARROW              &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans           &trans         &trans                       &trans                &trans                                                       &to 0
+&kp MINUS                   &kp KP_NUMBER_7  &kp PERCENT      &kp PLUS         &kp SEMICOLON                                         &kp LEFT_BRACKET   &kp N7        &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp SLASH                   &kp AT_SIGN      &kp KP_NUMBER_5  &kp RC(AMPS)     &kp ASTERISK   &caps_word       &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL
+&mt LEFT_SHIFT KP_NUMBER_0  &kp UP_ARROW     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &kp AT_SIGN      &kakko2               &kp NUMBER_0       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
+&kp LEFT_ARROW              &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans           &trans         &trans           &trans                &trans                                                       &to 0
             >;
         };
 
