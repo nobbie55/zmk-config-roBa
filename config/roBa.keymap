@@ -43,28 +43,28 @@
     };
 
     macros {
-        kakko1: new_macro1 {
+        new_macro1: new_macro1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_BRACKET &kp RET &kp LEFT_ARROW>;
             label = "NEW_MACRO1";
         };
 
-        kakko2: new_macro2 {
+        new_macro2: new_macro2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_PARENTHESIS &kp RET &kp LEFT_ARROW>;
             label = "NEW_MACRO2";
         };
 
-        pw1: new_macro3 {
+        new_macro3: new_macro3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N &kp O &kp B &kp U &kp N6 &kp N9 &kp N5 &kp N7>;
             label = "NEW_MACRO3";
         };
 
-        pw2: new_macro4 {
+        new_macro4: new_macro4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(B) &kp A &kp T &kp B &kp N3 &kp N3 &kp N5 &kp N5 &kp N3 &kp N3>;
@@ -90,7 +90,7 @@
             bindings = <
 &kp Q             &kp W                &kp E      &kp R                 &kp T                                                        &kp Y      &kp U  &kp I        &kp O    &kp P
 &kp A             &kp S                &kp D      &kp F                 &kp G                   &mkp MB3           &kp LEFT_BRACKET  &kp H      &kp J  &kp K        &kp L    &kp MINUS
-&kp Z             &kp X                &kp C      &kp V                 &kp B                   &mkp MB4           &kakko1           &kp N      &kp M  &lt 5 COMMA  &kp DOT  &kp SLASH
+&kp Z             &kp X                &kp C      &kp V                 &kp B                   &mkp MB4           &new_macro1       &kp N      &kp M  &lt 5 COMMA  &kp DOT  &kp SLASH
 &mt LEFT_ALT TAB  &mt LEFT_CONTROL F5  &kp LG(V)  &mt LEFT_SHIFT LANG2  &mt LEFT_COMMAND LANG1  &kp BACKSPACE      &lt 2 SPACE       &lt 1 RET                               &to 2
             >;
 
@@ -99,10 +99,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans              &trans         &trans               &kp ESC                                          &kp LG(W)  &kp LA(LG(LEFT_ARROW))  &kp LG(R)  &kp RG(RA(RIGHT_ARROW))  &trans
-&trans  &kp LC(LEFT_ARROW)  &kp F3         &kp RC(RIGHT_ARROW)  &kp LS(LG(NUMBER_4))  &trans      &kp LC(LG(Q))  &trans     &kp LG(LEFT_BRACKET)    &kp R      &kp RG(RIGHT_BRACKET)    &trans
-&trans  &trans              &trans         &trans               &kp F4                &trans      &kp LG(Q)      &trans     &kp LG(Z)               &kp LG(A)  &kp LS(LG(Z))            &trans
-&trans  &trans              &kp LA(LG(V))  &trans               &pw2                  &pw1        &trans         &trans                                                                 &trans
+&trans  &trans              &trans         &trans               &kp ESC                                               &kp LG(W)  &kp LA(LG(LEFT_ARROW))  &kp LG(R)  &kp RG(RA(RIGHT_ARROW))  &trans
+&trans  &kp LC(LEFT_ARROW)  &kp F3         &kp RC(RIGHT_ARROW)  &kp LS(LG(NUMBER_4))  &trans           &kp LC(LG(Q))  &trans     &kp LG(LEFT_BRACKET)    &kp R      &kp RG(RIGHT_BRACKET)    &trans
+&trans  &trans              &trans         &trans               &kp F4                &trans           &kp LG(Q)      &trans     &kp LG(Z)               &kp LG(A)  &kp LS(LG(Z))            &trans
+&trans  &trans              &kp LA(LG(V))  &trans               &new_macro4           &new_macro3      &trans         &trans                                                                 &trans
             >;
         };
 
@@ -110,7 +110,7 @@
             bindings = <
 &kp MINUS                   &kp KP_NUMBER_7  &kp PERCENT      &kp PLUS         &kp SEMICOLON                                         &kp LEFT_BRACKET   &kp N7        &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
 &kp SLASH                   &kp AT_SIGN      &kp KP_NUMBER_5  &kp RC(AMPS)     &kp ASTERISK   &caps_word       &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL
-&mt LEFT_SHIFT KP_NUMBER_0  &kp UP_ARROW     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &kp AT_SIGN      &kakko2               &kp NUMBER_0       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
+&mt LEFT_SHIFT KP_NUMBER_0  &kp UP_ARROW     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &kp AT_SIGN      &new_macro2           &kp NUMBER_0       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH
 &kp LEFT_ARROW              &kp DOWN_ARROW   &kp RIGHT_ARROW  &trans           &trans         &trans           &trans                &trans                                                       &to 0
             >;
         };
