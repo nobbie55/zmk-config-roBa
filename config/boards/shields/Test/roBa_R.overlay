@@ -25,6 +25,11 @@ auto_mouse_layer_ip: auto_mouse_layer_ip {
     timeout-ms = <10000>;
     excluded-positions = <18 20>;
 };
+mkp_click_ip: mkp_click_ip {
+    compatible = "zmk,temp-layer-input-processor";
+    layer = <4>;
+    timeout-ms = <250>;
+};
 };
 
 &pinctrl {
