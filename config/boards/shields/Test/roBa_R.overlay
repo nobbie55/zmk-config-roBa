@@ -15,11 +15,16 @@
 };
 
 / {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
+    &trackball_listener {
+    input-processors = <&auto_mouse_layer_ip>;
+};
 
-    };
+auto_mouse_layer_ip: auto_mouse_layer_ip {
+    compatible = "zmk,temp-layer-input-processor";
+    layer = <4>;
+    timeout-ms = <10000>;
+    excluded-positions = <18 20>;
+};
 };
 
 &pinctrl {
