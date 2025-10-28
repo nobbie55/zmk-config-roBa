@@ -5,37 +5,23 @@
 
 &kscan0 {
     col-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>,
-                <&xiao_d 9 GPIO_ACTIVE_HIGH>,
-                <&xiao_d 8 GPIO_ACTIVE_HIGH>,
-                <&xiao_d 7 GPIO_ACTIVE_HIGH>,
-                <&gpio0 10 GPIO_ACTIVE_HIGH>;
+                <&xiao_d 9  GPIO_ACTIVE_HIGH>,
+                <&xiao_d 8  GPIO_ACTIVE_HIGH>,
+                <&xiao_d 7  GPIO_ACTIVE_HIGH>,
+                <&gpio0  10 GPIO_ACTIVE_HIGH>;
 };
 
+/* listener (device=<&trackball>) is required for IP */
  / {
-    auto_mouse_layer_ip: auto_mouse_layer_ip {
-        compatible = "zmk,temp-layer-input-processor";
-        layer = <4>;
-        timeout-ms = <10000>;
-        excluded-positions = <18 20>;
-    };
-
-    mkp_click_ip: mkp_click_ip {
-        compatible = "zmk,temp-layer-input-processor";
-        layer = <4>;
-        timeout-ms = <250>;
-    };
-
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&auto_mouse_layer_ip>;
     };
+};
 
-    mkp_input_listener {
-        compatible = "zmk,input-listener";
-        device = <&mkp>;
-        input-processors = <&mkp_click_ip>;
-    };
+/* attach zip temp layer: movement -> layer 4 for 10s */
+&trackball_listener {
+    input-processors = <&zip_temp_layer 4 10000>;
 };
 
 &xiao_serial { status = "disabled"; };
@@ -54,6 +40,7 @@
     }};
 };
 
+/* define the trackball under spi0 (since roBa.dtsi has none) */
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -68,6 +55,8 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+        /* DO NOT set automouse-layer here when using IP */
         scroll-layers = <5>;
     };
 };
