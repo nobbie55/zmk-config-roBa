@@ -12,24 +12,23 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
+&zip_temp_layer {
+    excluded-positions = <
+        18 // J
+        20//  l
+    >;
 };
 
 / {
-    &trackball_listener {
-    input-processors = <&auto_mouse_layer_ip>;
-};
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
 
-auto_mouse_layer_ip: auto_mouse_layer_ip {
-    compatible = "zmk,temp-layer-input-processor";
-    layer = <4>;
-    timeout-ms = <10000>;
-    excluded-positions = <18 20>;
-};
-mkp_click_ip: mkp_click_ip {
-    compatible = "zmk,temp-layer-input-processor";
-    layer = <4>;
-    timeout-ms = <250>;
-};
+        input-processors = <&zip_temp_layer 4 10000>;
+    };
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 4 250>;
+    };
 };
 
 &pinctrl {
