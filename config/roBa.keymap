@@ -40,6 +40,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        tesuto {
+            bindings = <&kp C>;
+            key-positions = <18 20>;
+        };
     };
 
     macros {
