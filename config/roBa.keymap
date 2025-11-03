@@ -5,14 +5,15 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100  //
 #define MOUSE 4
-#define SCROLL 5
-#define NUM 6
 
 #include <input/processors.dtsi>
 
 &mkp_input_listener {
     input-processors = <&zip_temp_layer 4 250>;
 };
+
+#define SCROLL 5
+#define NUM 6
 
 &mt {
     flavor = "balanced";
